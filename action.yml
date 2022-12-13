@@ -10,6 +10,9 @@ inputs:
   timeout:
     description: 'Custom timeout value (default: "10" (seconds))'
     required: false
+  interval:
+    description: 'Custom ping interval value (default: 420 milliseconds)'
+    required: false
 outputs:
   deploymentDetails:
     description: 'Forwarded Vercel API response - See https://vercel.com/docs/api#endpoints/deployments/get-a-single-deployment/response-parameters'
