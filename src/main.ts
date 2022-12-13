@@ -43,7 +43,7 @@ const run = (): void => {
       .catch((error) => {
         core.setFailed(error);
       });
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message);
   }
 };
