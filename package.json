@@ -34,6 +34,9 @@
     "await",
     "deployment"
   ],
+  "engines": {
+    "node": "16.x"
+  },
   "author": "UnlyEd",
   "license": "MIT",
   "dependencies": {
