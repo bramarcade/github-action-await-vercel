@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import awaitVercelDeployment from './awaitVercelDeployment';
-import { DEFAULT_TIMEOUT } from './config';
+import { DEFAULT_TIMEOUT, DEFAULT_INTERVAL } from './config';
 import { VercelDeployment } from './types/VercelDeployment';
 
 /**
@@ -33,7 +33,10 @@ const run = (): void => {
     const timeout: number = (+core.getInput('timeout') || DEFAULT_TIMEOUT) * 1000;
     core.debug(`Timeout used: ${timeout}`);
 
-    awaitVercelDeployment(urlToWait, timeout)
+    const interval: number = +core.getInput('interval') || DEFAULT_INTERVAL;
+    core.debug(`Interval used: ${interval}`);
+
+    awaitVercelDeployment(urlToWait, timeout, interval)
       .then((deployment: VercelDeployment) => {
         core.setOutput('deploymentDetails', deployment);
       })
