@@ -37,7 +37,7 @@
     "deployment"
   ],
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "author": "UnlyEd",
   "license": "MIT",
